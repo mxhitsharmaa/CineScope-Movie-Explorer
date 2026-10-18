@@ -1,16 +1,16 @@
-# CineScope — Movie Explorer
+CineScope — Movie Explorer
 
-CineScope is a modern, responsive movie discovery application built with React, TypeScript, and Tailwind CSS. It helps users discover trending movies, explore popular titles, search for movies, view detailed movie information, and maintain a personal watchlist.
+CineScope is a modern, responsive movie discovery application built with React, TypeScript, and Tailwind CSS. It provides a seamless way to discover movies, explore trending titles, search for specific films, view movie details, and manage a personal watchlist.
 
-The application uses The Movie Database (TMDB) API to retrieve movie information and deliver a dynamic movie browsing experience through a clean, cinematic interface.
+Powered by The Movie Database (TMDB) API, CineScope combines real-time movie data with a clean, cinematic interface designed to deliver an engaging browsing experience across desktop, tablet, and mobile devices.
 
-**Live Demo:** Add your deployed URL here
+Live Demo: Add your deployed URL here
 
-**GitHub Repository:** [CineScope-Movie-Explorer](https://github.com/mxhitsharmaa/CineScope-Movie-Explorer)
+GitHub Repository: "CineScope-Movie-Explorer" (https://github.com/mxhitsharmaa/CineScope-Movie-Explorer)
 
 ---
 
-## Table of Contents
+Table of Contents
 
 - Overview
 - Features
@@ -18,16 +18,16 @@ The application uses The Movie Database (TMDB) API to retrieve movie information
 - Application Pages
 - Project Structure
 - Prerequisites
-- Installation and Setup
-- Environment Variables
-- Running the Application
+- Getting Started
+- Environment Configuration
 - API Integration
-- Routing
+- Application Routing
 - Watchlist Management
 - Responsive Design
 - Performance and Accessibility
 - Available Scripts
-- Future Improvements
+- Deployment
+- Future Enhancements
 - Troubleshooting
 - Contributing
 - License
@@ -35,146 +35,153 @@ The application uses The Movie Database (TMDB) API to retrieve movie information
 
 ---
 
-## Overview
+Overview
 
-CineScope is designed to provide a smooth and engaging experience for discovering movies across different genres and categories.
+CineScope is built to make movie discovery simple, intuitive, and enjoyable. It brings together movie recommendations, trending titles, search functionality, detailed movie information, and personal watchlist management in one responsive application.
 
-The application focuses on modern frontend development practices, reusable React components, type-safe data handling, responsive layouts, efficient API requests, and maintainable project architecture.
+The project emphasizes modern frontend development practices, including reusable React components, TypeScript for type safety, API integration, responsive layouts, and maintainable code organization.
 
-Users can browse movie collections, search for specific titles, explore movie details, and save movies to their personal watchlist.
+With its cinematic dark theme, visually rich movie posters, and straightforward navigation, CineScope provides a focused interface for exploring movies and keeping track of titles worth watching.
 
-The interface follows a cinematic design approach with a dark theme, visually rich movie posters, intuitive navigation, and responsive layouts for desktop, tablet, and mobile devices.
+The application is designed around three core principles:
 
-## Features
+- Discovery: Explore trending, popular, and top-rated movies.
+- Simplicity: Find movie information through intuitive navigation and search.
+- Personalization: Maintain a watchlist of movies to revisit later.
 
-### Movie Discovery
+Features
 
-- Browse trending movies and popular titles.
-- Explore top-rated movies.
-- Display movie posters, titles, release dates, and ratings.
+Movie Discovery
+
+- Browse trending and popular movies.
+- Explore top-rated titles.
+- View movie posters, release dates, and ratings.
 - Discover movies by genre.
-- View movie collections through reusable card components.
+- Navigate through movie collections using reusable card components.
 
-### Search and Filtering
+Search and Filtering
 
 - Search for movies by title.
-- Implement debounced search to reduce unnecessary API requests.
-- Filter movies by genre.
-- Sort and browse movie results.
-- Support infinite scrolling or paginated results.
+- Reduce unnecessary API requests with debounced search.
+- Filter results by genre.
+- Sort and browse search results.
+- Support pagination or infinite scrolling, depending on the implementation.
 - Display appropriate loading, empty, and error states.
 
-### Movie Details
+Movie Details
 
 - View detailed movie information.
-- Display movie overview and release date.
-- Show genres, ratings, and runtime when available.
-- Display movie backdrops and posters.
-- Explore cast and related movie information when supported by the API.
-- Provide access to available trailers when implemented.
+- Explore movie descriptions, release dates, and ratings.
+- Display genres and runtime when available.
+- View movie posters and backdrop images.
+- Explore cast and crew information when supported.
+- Access available trailers when implemented.
 
-### Personal Watchlist
+Personal Watchlist
 
 - Add movies to a personal watchlist.
 - Remove movies from the watchlist.
-- Save watchlist data using browser local storage.
-- Restore saved movies after refreshing the page.
-- Display an informative empty state when no movies have been saved.
+- Persist saved movies using browser local storage.
+- Restore the watchlist after refreshing the page.
+- Prevent duplicate entries.
+- Display a helpful empty state when no movies have been saved.
 
-### User Interface
+Modern User Interface
 
-- Modern, cinematic dark-themed interface.
-- Responsive layout for desktop, tablet, and mobile devices.
-- Reusable and maintainable React components.
-- Smooth hover effects and subtle transitions.
+- Clean, cinematic dark-themed design.
+- Responsive layouts for desktop, tablet, and mobile devices.
+- Reusable components for consistent UI development.
+- Smooth transitions and interactive hover effects.
 - Consistent typography, spacing, and visual hierarchy.
-- Accessible navigation and interactive controls.
-- Loading indicators and user-friendly error messages.
+- Accessible controls and keyboard-friendly navigation.
+- Clear loading indicators and error messages.
 
-### Navigation
+Navigation
 
 - Client-side routing with React Router.
-- Dedicated pages for home, search, movie details, and watchlist.
-- Dynamic movie detail routes using movie IDs.
-- A fallback page for unknown routes.
-- Browser navigation support.
+- Dedicated pages for movie discovery, search, movie details, and watchlist management.
+- Dynamic routes for individual movies.
+- Browser back and forward navigation support.
+- A dedicated not-found page for invalid routes.
 
-## Technology Stack
+Technology Stack
 
-| Technology | Purpose |
-| --- | --- |
-| React | Building reusable and interactive user interfaces |
-| TypeScript | Type safety and maintainable application code |
-| Tailwind CSS | Responsive styling and UI development |
-| Vite | Development server and production build tooling |
-| React Router | Client-side routing and page navigation |
-| TMDB API | Movie data, posters, ratings, and related information |
-| Lucide React | Consistent interface icons |
-| Browser Local Storage | Persistent client-side watchlist |
-| Git and GitHub | Version control and source code hosting |
+Technology| Purpose
+React| Building interactive and reusable user interfaces
+TypeScript| Improving type safety and code maintainability
+Tailwind CSS| Creating responsive layouts and consistent styling
+Vite| Development server and production build tooling
+React Router| Client-side navigation and route management
+TMDB API| Retrieving movie information, ratings, posters, and related data
+Lucide React| Providing consistent interface icons
+Browser Local Storage| Persisting watchlist data locally
+Git and GitHub| Version control and source code management
 
-## Application Pages
+Application Pages
 
-### 1. Home Page
+1. Home Page
 
-The home page serves as the primary discovery screen.
+The home page introduces users to the movie discovery experience.
 
-It can include:
+Key sections may include:
 
-- Featured movie section.
+- Featured movie or hero section.
 - Trending movies.
 - Popular movies.
 - Top-rated titles.
 - Genre-based collections.
-- Movie cards with essential information.
+- Movie cards displaying essential information.
 
-### 2. Search Page
+The goal is to help users discover interesting movies without needing to search manually.
 
-The search page allows users to find movies using a search query.
+2. Search Page
 
-It can include:
+The search page helps users find specific movies quickly.
+
+Key functionality may include:
 
 - Search input with debouncing.
-- Search results grid.
-- Genre filters and sorting options.
+- Search results displayed in a responsive grid.
+- Genre-based filtering.
+- Sorting options.
 - Pagination or infinite scrolling.
-- Loading and no-results states.
+- Loading, empty, and error states.
 
-### 3. Movie Details Page
+3. Movie Details Page
 
-Each movie has a dedicated details page accessible through a dynamic route.
+Each movie has a dedicated page containing additional information.
 
-It can include:
+Depending on API support and implementation, the page may display:
 
 - Movie poster and backdrop.
 - Title and overview.
-- Release date and rating.
+- Release date and user rating.
 - Runtime and genres.
 - Cast and crew information.
-- Trailer access when available.
+- Available trailers.
 - Add-to-watchlist functionality.
+- Related movie recommendations.
 
-### 4. Watchlist Page
+4. Watchlist Page
 
 The watchlist page displays movies saved by the user.
 
-It can include:
+Features include:
 
-- Saved movie cards.
-- Remove-from-watchlist functionality.
-- Persistent data using local storage.
-- Navigation to movie details.
-- An empty state when the watchlist contains no movies.
+- A collection of saved movie cards.
+- Quick access to movie details.
+- The ability to remove saved movies.
+- Persistent storage through browser local storage.
+- An informative empty state when the watchlist is empty.
 
-### 5. Not Found Page
+5. Not Found Page
 
-A fallback page handles invalid or unknown application routes and provides a way to return to the home page.
+The not-found page handles unknown routes and provides a straightforward way to return to the home page.
 
-## Project Structure
+Project Structure
 
-The following structure represents the intended application architecture. Add or adjust files as the implementation evolves.
+The following structure represents the recommended organization for the application. Actual files may vary depending on the current implementation.
 
-```text
 CineScope-Movie-Explorer/
 ├── public/
 ├── src/
@@ -212,324 +219,299 @@ CineScope-Movie-Explorer/
 ├── tsconfig.json
 ├── vite.config.ts
 └── README.md
-```
 
-## Prerequisites
+Prerequisites
 
-Before running CineScope locally, make sure you have the following installed:
+Before running CineScope locally, ensure that you have the following installed:
 
-- Node.js (a supported LTS version).
-- npm, which is included with Node.js.
+- Node.js and npm.
 - Git.
-- A TMDB account and API credentials for accessing movie data.
+- A TMDB account with API credentials.
 - A code editor such as Visual Studio Code.
 
-Verify your installation:
+Verify your installations:
 
-```bash
 node --version
 npm --version
 git --version
-```
 
-## Installation and Setup
+Getting Started
 
-### Step 1: Clone the repository
+Follow these steps to set up CineScope on your local machine.
 
-```bash
+1. Clone the Repository
+
 git clone https://github.com/mxhitsharmaa/CineScope-Movie-Explorer.git
-```
 
-### Step 2: Navigate to the project directory
+2. Navigate to the Project Directory
 
-```bash
 cd CineScope-Movie-Explorer
-```
 
-### Step 3: Install dependencies
+3. Install Dependencies
 
-```bash
 npm install
-```
 
-### Step 4: Configure environment variables
+4. Configure Environment Variables
 
-Create a `.env.local` file in the project root and add your TMDB API Read Access Token.
+Create a ".env.local" file in the root directory and add your TMDB API Read Access Token.
 
-```env
 VITE_TMDB_ACCESS_TOKEN=your_tmdb_read_access_token
-```
 
-Replace the placeholder with your actual token.
+Replace the placeholder with your actual API token.
 
-Do not commit `.env.local` to GitHub.
+Do not commit your ".env.local" file or expose real credentials in public repositories.
 
-### Step 5: Start the development server
+5. Start the Development Server
 
-```bash
 npm run dev
-```
 
-Open the local URL displayed in your terminal, usually:
+Open the local URL displayed in your terminal. The default Vite address is usually:
 
-```text
 http://localhost:5173
-```
 
-The development server supports hot module replacement, allowing changes to appear in the browser as you edit the application.
+Vite's development server supports hot module replacement, allowing changes to appear in the browser as you edit your code.
 
-## Environment Variables
+Environment Configuration
 
-| Variable | Description |
-| --- | --- |
-| `VITE_TMDB_ACCESS_TOKEN` | TMDB API Read Access Token used by the frontend |
+CineScope uses environment variables to configure access to the TMDB API.
 
-Environment variables prefixed with `VITE_` are exposed to client-side code by Vite. Therefore, the token must not be treated as a private secret. For stronger credential protection, route requests through a backend service that keeps private credentials server-side.
+Variable| Description
+"VITE_TMDB_ACCESS_TOKEN"| TMDB API Read Access Token used by the frontend
 
-Make sure `.env.local` is included in `.gitignore`.
+Environment variables prefixed with "VITE_" are exposed to client-side code. Therefore, this configuration does not keep the token secret from application users.
 
-Example:
+For a public portfolio project, avoid committing credentials to version control. If stronger credential protection is required, route API requests through a backend service that manages credentials server-side.
 
-```gitignore
+Make sure your ".gitignore" includes:
+
 node_modules/
 dist/
 .env
 .env.*
 !.env.example
-```
 
-If you provide an `.env.example` file, include only placeholder values, never real credentials.
+If you create an ".env.example" file, use placeholder values only.
 
-After changing environment variables, restart the development server.
+Restart the development server after modifying environment variables.
 
-## API Integration
+API Integration
 
-CineScope uses The Movie Database (TMDB) API to retrieve movie information.
+CineScope uses "The Movie Database (TMDB)" (https://www.themoviedb.org/) API to retrieve movie information and related content.
 
-Official resources:
+Official documentation:
 
-- TMDB website: https://www.themoviedb.org/
-- TMDB API documentation: https://developer.themoviedb.org/docs
-- TMDB API reference: https://developer.themoviedb.org/reference/intro/getting-started
+- "TMDB API Documentation" (https://developer.themoviedb.org/docs)
+- "TMDB API Reference" (https://developer.themoviedb.org/reference/intro/getting-started)
 
-### Setting Up TMDB
+Setting Up TMDB
 
 1. Create an account on TMDB.
 2. Open your account settings.
 3. Navigate to the API section.
 4. Request API access if required.
 5. Obtain your API Read Access Token.
-6. Add the token to `.env.local`.
-7. Restart the Vite development server.
+6. Add the token to ".env.local".
+7. Restart the development server.
 
-### API Service
+API Service Architecture
 
-Centralize API requests in `src/services/tmdb.ts` rather than repeating fetch logic throughout the application.
+API requests should be centralized in "src/services/tmdb.ts" rather than repeated throughout individual components.
 
-The service can handle:
+Depending on the implemented features, the service can manage requests for:
 
-- Trending movie requests.
-- Popular movie requests.
-- Top-rated movie requests.
-- Movie search.
-- Movie details.
+- Trending movies.
+- Popular movies.
+- Top-rated movies.
+- Movie search results.
+- Individual movie details.
 - Genre lists.
-- Cast and credits.
+- Cast and crew information.
 - Videos and trailers.
-- Pagination and API errors.
+- Paginated results.
 
-Use TypeScript interfaces to define movie data structures and handle optional API fields safely.
+Use TypeScript interfaces to represent API responses and handle optional properties safely.
 
-The application should handle failed requests, invalid credentials, unavailable results, and loading states gracefully.
+The application should also handle invalid credentials, failed requests, network interruptions, missing data, and empty results gracefully.
 
-## Routing
+Application Routing
 
-React Router provides client-side navigation between application pages.
+React Router manages navigation between application pages without requiring a full browser reload for every route transition.
 
-Suggested route configuration:
+Route| Description
+"/"| Home and movie discovery
+"/search"| Search and filter movies
+"/movie/:id"| View individual movie details
+"/watchlist"| Manage saved movies
+"*"| Display the not-found page
 
-| Route | Page |
-| --- | --- |
-| `/` | Home page |
-| `/search` | Search page |
-| `/movie/:id` | Movie details page |
-| `/watchlist` | Personal watchlist |
-| `*` | Not found page |
+For example, "/movie/550" represents a dynamic movie details route. The application uses the movie ID to retrieve the corresponding information from TMDB.
 
-Dynamic movie routes should use the movie ID provided by TMDB.
+Configure the deployment platform to support client-side routing so that direct navigation to individual routes works correctly.
 
-For example:
+Watchlist Management
 
-```text
-/movie/550
-```
+CineScope can use React state and browser local storage to maintain a persistent watchlist.
 
-The example ID represents a TMDB movie record; the application should fetch its actual details from the API.
+Recommended behavior includes:
 
-## Watchlist Management
-
-The watchlist can be implemented with React state and browser local storage.
-
-Recommended behavior:
-
-1. Load saved movie IDs or movie records when the application initializes.
-2. Add a movie when the user selects the watchlist control.
+1. Load saved movies when the application initializes.
+2. Add movies when users select the watchlist control.
 3. Prevent duplicate entries.
 4. Remove movies when requested.
 5. Persist changes to local storage.
-6. Keep watchlist controls synchronized across movie cards and detail pages.
-7. Handle unavailable or malformed saved data safely.
+6. Keep watchlist controls synchronized across relevant pages.
+7. Handle malformed or unavailable stored data safely.
 
-Local storage provides persistence within the same browser, but it does not synchronize data across devices or provide account-based cloud storage.
+Local storage keeps watchlist data in the current browser. It does not automatically synchronize saved movies across devices or provide cloud-based account storage.
 
-## Responsive Design
+Responsive Design
 
-CineScope is intended to work across different screen sizes.
+CineScope follows a mobile-first approach to provide a consistent browsing experience across different screen sizes.
 
-The responsive interface should provide:
+The interface should support:
 
 - Flexible movie grids.
-- Mobile-friendly navigation.
+- Responsive navigation.
 - Readable typography.
-- Properly sized movie posters.
-- Touch-friendly controls.
-- Responsive search and filter layouts.
-- Optimized spacing on smaller screens.
-- Appropriate image sizing for different devices.
+- Appropriately sized movie posters.
+- Touch-friendly interactive controls.
+- Adaptable search and filter layouts.
+- Consistent spacing across screen sizes.
+- Efficient image loading.
 
-Tailwind CSS utility classes can be used to implement responsive layouts with mobile-first breakpoints.
+Tailwind CSS responsive utilities help maintain consistent layouts without requiring extensive custom media queries.
 
-## Performance and Accessibility
+Performance and Accessibility
 
-The application should follow practical frontend performance and accessibility guidelines.
+Performance Optimization
 
-### Performance
+The application should follow practical performance optimization techniques, including:
 
-- Debounce search input.
-- Avoid unnecessary API requests.
-- Use reusable components.
-- Load appropriately sized movie images.
-- Lazy-load images where suitable.
-- Provide stable loading states.
-- Clean up event listeners and asynchronous effects.
-- Use pagination or infinite scrolling efficiently.
-- Split routes into separate bundles if the application grows.
-- Check production bundle size before deployment.
+- Debouncing search input.
+- Avoiding unnecessary API requests.
+- Reusing components and shared logic.
+- Loading appropriately sized movie images.
+- Lazy-loading images when appropriate.
+- Displaying stable loading states.
+- Cleaning up event listeners and asynchronous effects.
+- Using pagination or infinite scrolling efficiently.
+- Splitting route bundles when beneficial.
+- Monitoring production bundle size.
 
-### Accessibility
+Accessibility
 
-- Use semantic HTML elements.
-- Provide meaningful alternative text for movie posters.
-- Label search fields and interactive controls.
-- Ensure keyboard navigation works.
-- Maintain sufficient text contrast.
-- Provide visible focus indicators.
-- Use descriptive page titles.
-- Respect reduced-motion preferences where appropriate.
+Accessibility considerations include:
 
-## Available Scripts
+- Using semantic HTML elements.
+- Providing meaningful alternative text for movie posters.
+- Associating labels with form controls.
+- Supporting keyboard navigation.
+- Maintaining sufficient color contrast.
+- Providing visible focus indicators.
+- Using descriptive page titles.
+- Respecting reduced-motion preferences.
+- Communicating loading and error states clearly.
 
-The standard Vite React TypeScript project provides the following scripts:
+These practices help make the application more usable across different devices and assistive technologies.
 
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Create an optimized production build |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint if the script is configured |
+Available Scripts
 
-Check `package.json` for the scripts actually available in your repository.
+The following commands are commonly available in a Vite-based React and TypeScript project.
 
-Build the application before deployment:
+Command| Description
+"npm run dev"| Start the development server
+"npm run build"| Generate an optimized production build
+"npm run preview"| Preview the production build locally
+"npm run lint"| Run ESLint if configured
 
-```bash
+Check "package.json" to confirm which scripts are available in your repository.
+
+To create a production build:
+
 npm run build
-```
 
-The generated production files are placed in the `dist/` directory.
+The generated files are typically placed in the "dist/" directory.
 
 To preview the production build locally:
 
-```bash
 npm run preview
-```
 
-## Deployment
+Deployment
 
-CineScope can be deployed to frontend hosting platforms that support Vite applications, such as Vercel, Netlify, or GitHub Pages.
+CineScope can be deployed to frontend hosting platforms such as Vercel, Netlify, or GitHub Pages.
 
 General deployment steps:
 
-1. Push the project to GitHub.
+1. Push the latest code to GitHub.
 2. Import the repository into your chosen hosting platform.
-3. Set the build command to `npm run build`.
-4. Set the output directory to `dist`.
-5. Configure required environment variables.
+3. Set the build command to "npm run build".
+4. Set the output directory to "dist".
+5. Configure the required environment variables.
 6. Deploy the application.
-7. Verify that all routes, API requests, images, and watchlist functionality work correctly.
+7. Verify API requests, movie images, application routes, and watchlist functionality.
 
-For single-page application routing, configure the hosting platform to serve `index.html` for application routes when required.
+For single-page application routing, configure the hosting platform to serve "index.html" for application routes when necessary.
 
-Remember that frontend environment variables are visible to visitors. Do not store private credentials in client-side variables.
+Before deploying, ensure that no private credentials have been committed to the repository. Remember that frontend environment variables are accessible to users through the client-side application.
 
-## Future Improvements
+After deployment, replace the Live Demo placeholder at the beginning of this README with your actual application URL.
 
-Potential enhancements include:
+Future Enhancements
 
-- Advanced filtering by release year, rating, and genre.
-- Dedicated genre pages.
-- Movie recommendations.
+Potential improvements for future versions include:
+
+- Advanced filtering by genre, rating, and release year.
+- Dedicated genre browsing pages.
+- Personalized movie recommendations.
 - Related movies and collections.
 - Trailer previews.
 - Improved sorting and discovery options.
 - Skeleton loading placeholders.
-- Better offline and network-error handling.
-- Unit and component tests.
+- Enhanced network-error handling.
+- Unit and component testing.
 - End-to-end testing.
-- Optional user authentication and cloud-synced watchlists.
+- Optional authentication and cloud-synchronized watchlists.
 - Backend integration for protected API credentials.
-- Internationalization and additional language support.
+- Multi-language support.
 - Search engine optimization and social sharing metadata.
 
-These improvements can be introduced incrementally as the application develops.
+These enhancements can be introduced incrementally as the application evolves.
 
-## Troubleshooting
+Troubleshooting
 
-### Application does not start
+Application Does Not Start
 
-Install dependencies and restart the development server:
+Install the project dependencies and restart the development server.
 
-```bash
 npm install
 npm run dev
-```
 
-Confirm that your Node.js version is compatible with the installed Vite version.
+If the issue persists, verify that your Node.js version is compatible with the installed Vite version.
 
-### TMDB API requests fail
+TMDB API Requests Fail
 
 Check the following:
 
-- The token is valid.
-- The environment variable name matches the code.
-- `.env.local` is located in the project root.
+- The API token is valid.
+- The environment variable name matches the one used in the application.
+- ".env.local" is located in the project root.
 - The development server was restarted after changing environment variables.
-- The API request URL and endpoint are correct.
-- The API response and browser console do not indicate authorization or network errors.
+- The API endpoint and request configuration are correct.
+- The browser console and network panel do not report authorization or connectivity errors.
 
-### Movie posters are missing
+Movie Posters Are Missing
 
-Verify that the application constructs valid TMDB image URLs, uses supported image sizes, and handles missing poster paths.
+Verify that the application constructs valid TMDB image URLs, uses supported image sizes, and handles missing poster paths correctly.
 
-### Watchlist data does not persist
+Watchlist Data Does Not Persist
 
-Confirm that local storage is enabled in the browser and that the application updates the stored value when movies are added or removed.
+Confirm that local storage is available in the browser and that the application updates the stored data whenever movies are added or removed.
 
-### Movie detail routes return a 404 after deployment
+Movie Details Return a 404 After Deployment
 
-Configure the hosting provider to rewrite application routes to `index.html` where necessary.
+Configure the hosting provider to redirect application routes to "index.html" where required for client-side routing.
 
-## Contributing
+Contributing
 
 Contributions, bug reports, and suggestions are welcome.
 
@@ -537,26 +519,27 @@ To contribute:
 
 1. Fork the repository.
 2. Create a feature branch.
-3. Implement and test your changes.
-4. Commit your work with a clear message.
-5. Push the branch to your fork.
-6. Open a pull request describing the changes.
+3. Implement your changes.
+4. Test the affected functionality.
+5. Commit your changes with a descriptive commit message.
+6. Push the branch to your fork.
+7. Open a pull request explaining the changes.
 
-Please keep components reusable, maintain TypeScript type safety, and follow the existing project conventions.
+Please follow the existing project conventions, maintain TypeScript type safety, and keep components reusable and easy to maintain.
 
-## License
+License
 
-A license has not yet been specified for this project.
+No license has currently been specified for this project.
 
-If you intend to distribute the source code for reuse, add an appropriate license file and update this section.
+If you plan to distribute the source code for reuse, add an appropriate open-source license and include the corresponding "LICENSE" file.
 
-## Author
+Author
 
-**Mohit Sharma**
+Mohit Sharma
 
 Frontend Developer
 
-- GitHub: https://github.com/mxhitsharmaa
-- Portfolio: https://mohitttt.site.je
+- GitHub: "mxhitsharmaa" (https://github.com/mxhitsharmaa)
+- Portfolio: "mohitttt.site.je" (https://mohitttt.site.je)
 
-CineScope is a portfolio project focused on modern frontend development, responsive UI design, API integration, and practical React and TypeScript application architecture.
+CineScope is a portfolio project demonstrating frontend development skills, responsive interface design, API integration, and modern React and TypeScript development practices.
