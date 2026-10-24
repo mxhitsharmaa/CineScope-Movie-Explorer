@@ -4,7 +4,7 @@ CineScope is a modern, responsive movie discovery application built with React, 
 
 Powered by The Movie Database (TMDB) API, CineScope combines real-time movie data with a clean, cinematic interface designed to deliver an engaging browsing experience across desktop, tablet, and mobile devices.
 
-Live Demo: Add your deployed URL here
+
 
 GitHub Repository: "CineScope-Movie-Explorer" (https://github.com/mxhitsharmaa/CineScope-Movie-Explorer)
 
